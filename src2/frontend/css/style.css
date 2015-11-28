@@ -1,0 +1,160 @@
+/*initialize*/
+body{
+    margin:0;
+}
+a{ text-decoration:none;}
+.centering{
+    margin:0 auto;
+}
+.align-cent{
+    text-align: center;
+}
+.bgimg{
+    background-position: center center;
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-size: cover;
+}
+.circle{
+    border-radius: 50%;
+}
+/*header*/
+header{
+    height:50px;
+    width:100vw;
+    position: absolute;
+    top:0px;
+    z-index: 10;
+}
+header strong{
+    font-size: 2em;
+}
+
+/*main*/
+main{
+    height: 100vh;
+    width: 100vw;
+    position:relative;
+    overflow: hidden;
+}
+.pos-abs-top0{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height:100vh;
+}
+/*top*/
+.top-wrapper{
+    /*Debug setting*/
+    /*display: none; */
+    /*opacity: 0.7;*/
+
+
+    z-index: 5;
+}
+.top-cntnt{
+    position: absolute;
+    top:0;
+    width:50vw;
+    height:100vh;
+    z-index: -5;
+}
+.tp-l{left:0;}.tp-r{right:0;}
+.txt-lg{
+    font-size: 5em;
+}
+.btn-start{
+    margin-top: 200px;
+    height:500px;
+    width:500px;
+    text-align: center;
+    z-index: 20;
+}
+.btn-start:hover{
+    /*background-color: rgba(255,255,255,0.3);*/
+    animation: anime-expand 0.1s ease 0s 1 alternate;
+    -webkit-transform: scale(1.15);
+    -moz-transform: scale(1.15);
+}
+@keyframes anime-expand{
+    0% {
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1.15);
+        -moz-transform: scale(1.15);
+    }
+}
+.anime-active{
+    animation: frameout 0.5s ease 0s 1 alternate;
+    -webkit-transform: translate(0px,1000px);
+    -moz-transform: translate(0px,1000px);
+}
+@keyframes frameout{
+    0% {
+        -webkit-transform: translate(0px,0px);
+        -moz-transform: translate(0px,0px);
+    }
+    100% {
+        -webkit-transform: translate(0px,1000px);
+        -moz-transform: translate(0px,1000px);
+    }
+}
+
+.txt-start{
+    padding-top: 180px;
+}
+.bgimg1{
+    background-image: url(../img/moyai.jpg);
+}
+.bgimg2{
+    background-image: url(../img/hachiko.jpg);
+}
+
+/*result*/
+.result-wrapper{
+
+}
+.result{
+    position: relative;
+    top:0;
+    height:100%;
+    width:50vw;
+}
+.l-float{
+    float: left;
+}
+.r-float{
+    float:right;
+}
+
+/*map*/
+.brdr-rad{
+    border-radius: 15px;
+    overflow: scroll;
+}
+.map{
+    margin-top:150px;
+    width:500px;
+    height:500px;
+}
+.inner-shadow{
+    -webkit-box-shadow:0 0 2px 2px rgba(200,200,200,0.5) inset;
+    -moz-box-shadow:0 0 2px 2px rgba(200,200,200,0.5) inset;
+    box-shadow:0 0 2px 2px rgba(200,200,200,0.5) inset;
+}
+/*root table*/
+.root-table{
+    margin-top: 100px;
+    width: 80%;
+    text-align: center;
+    font-size: 1.5em;
+}
+/*footer*/
+footer{
+    width: 100vw;
+    position: absolute;
+    bottom:5px;
+    text-align: center;
+}
