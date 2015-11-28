@@ -1,0 +1,12 @@
+{
+  "name": "jphacks",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "method-override": "*",
+    "morgan": "*",
+    "jquery": "*",
+    "async": "*"
+  }
+}
