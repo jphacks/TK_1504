@@ -1,11 +1,11 @@
 module.exports=function(str){
-	
+
 	function gatya(map){
 		var ave=average(map);
 		var stand=standard_deviation(map);
-		
+
 		var ran=Math.random();
-		
+
 		var tmp=1.0/Math.sqrt(2*Math.PI*stand);
 		var stand2=Math.pow(stand,2);
 		var counter=0;
@@ -19,23 +19,23 @@ module.exports=function(str){
 			}
 			counter+=fx;
 			if(counter>ran){
-				return i;	
+				return i;
 			}
 		}
 		return i;
 	};
-	
-	
+
+
 	function average(data){
 		var sum=0;
 		var len=0;
 		for(var i in data){
 			if(data[i].rating!=undefined){
-				sum+=data[i].rating;				
+				sum+=data[i].rating;
 			}
 			len++;
 		}
-		
+
 		return sum/len;
 	};
 	function variance(data){
@@ -53,7 +53,7 @@ module.exports=function(str){
 		}
 		return varia/len;
 	};
-	standard_deviation:function (data){
+	function standard_deviation(data){
     var varia = variance(data);
     return Math.sqrt(varia);
 	};
@@ -61,17 +61,17 @@ module.exports=function(str){
 		var dict={};
 		var result=json.results;
 		for(var i=0;i<result.length;i++){
-			dict[result[i].id]=result[i];
+			dict[result[i].place_id]=result[i];
 		}
 		return dict;
 	};
-	
+
 	json=str;
 	json=JSON.parse(JSON.parse(json));
-	
+
 	return gatya(map_set());
-	
-	
-	
+
+
+
 
 }
