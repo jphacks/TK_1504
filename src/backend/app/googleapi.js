@@ -9,7 +9,7 @@ module.exports = function(app){
   app.get('/google/places', function(req, res){
 
     var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + req.query.lat + ","
-      + req.query.lng + "&radius=3000&types=restaurant&language=ja&sensor=false&key=" + keyid;
+      + req.query.lng + "&radius=3000&types=" + req.query.type + "&language=ja&sensor=false&key=" + keyid;
 
     var https = require('https');
     var data;

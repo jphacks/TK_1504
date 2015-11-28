@@ -2,8 +2,8 @@ var async = require('async');
 
 module.exports = function(app){
 
-  var url = "http://192.168.33.10:3000"
-  var option1 = url + "/google/places?lat=35.658182&lng=139.702043";
+  var url = "http://localhost:3000"
+  var option1 = url + "/google/places?";
   var option2 = url + "/google/detail?placeid=";
 
   var chooseone = "";
@@ -14,22 +14,27 @@ module.exports = function(app){
 
     async.waterfall([
       function(callback){
+        var option = option1
+          + "lat=" + req.query.lat
+          + "&lng=" + req.query.lng
+          + "&type=" + req.query.type;
+
         console.log("start");
-        http.get(option1,function(response){
+        http.get(option, function(response){
           var body = "";
           response.on('data', function(chunk){
             body += chunk;
           });
           response.on('end', function(){
             var gatya = require('../kamata-gatya.js')(body);
-            console.log(gatya);
+            console.log("gatya", gatya);
             callback(null, gatya);
           });
         });
       },
       function(placeid, callback){
-        option2 = option2 + placeid;
-        http.get(option2, function(response){
+        var option = option2 + placeid;
+        http.get(option, function(response){
           var body = "";
           response.on('data', function(chunk){
             body += chunk;
@@ -44,7 +49,7 @@ module.exports = function(app){
       if(err){
           throw err;
       }
-      console.log(result);
+      console.log("result", result);
       if(result == 'done'){
         res.send(chooseone);
       }
