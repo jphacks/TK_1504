@@ -1,24 +1,8 @@
-///
-var Tools={
-	json:"",
+module.exports=function(str){
 	
-	init:function(){
-		
-	},
-	main:function(str){
-		this.set(str);
-		this.parse();
-		//debug
-		this.parse();
-		//
-		var map=this.map_set();
-		console.log(map);
-		
-		return this.gatya(map);
-	},
-	gatya:function(map){
-		var ave=this.average(map);
-		var stand=this.standard_deviation(map);
+	function gatya(map){
+		var ave=average(map);
+		var stand=standard_deviation(map);
 		
 		var ran=Math.random();
 		
@@ -39,13 +23,10 @@ var Tools={
 			}
 		}
 		return i;
-	},
+	};
 	
-	standard_deviation:function (data){
-    var varia = this.variance(data);
-    return Math.sqrt(varia);
-	},
-	average:function(data){
+	
+	function average(data){
 		var sum=0;
 		var len=0;
 		for(var i in data){
@@ -56,9 +37,9 @@ var Tools={
 		}
 		
 		return sum/len;
-	},
-	variance:function(data){
-		var ave=this.average(data);
+	};
+	function variance(data){
+		var ave=average(data);
 		var varia=0;
 		var len=0;
 		for(var i in data){
@@ -71,27 +52,26 @@ var Tools={
 			len++;
 		}
 		return varia/len;
-	},
-	
-	set:function(json){
-		this.json=json;
-	},
-
-	parse:function(){
-		this.json=JSON.parse(this.json);
-	},
-	
-	map_set:function(){
+	};
+	standard_deviation:function (data){
+    var varia = variance(data);
+    return Math.sqrt(varia);
+	};
+	function map_set(){
 		var dict={};
-		var result=this.json.results;
+		var result=json.results;
 		for(var i=0;i<result.length;i++){
 			dict[result[i].id]=result[i];
 		}
 		return dict;
-	},
+	};
 	
-	choice:function(){
-		
-	},
+	json=str;
+	json=JSON.parse(JSON.parse(json));
+	
+	return gatya(map_set());
+	
+	
+	
 
 }
