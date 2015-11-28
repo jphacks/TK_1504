@@ -1,0 +1,95 @@
+/*initialize setting*/
+.padclr{padding:0;}
+.margclr{margin:0;}
+.centering{margin: 0 auto;}
+/*foater*/
+.f-left{float:left;}
+.f-right{float: right;}
+
+/*content*/
+/*header*/
+.header{
+    z-index: 10;
+    height:50px;
+    width:100vw;
+    position: absolute;
+    top:0px;
+}
+.header > div{
+    width: 100px;
+    text-align: center;
+}
+/*main*/
+.main-cont{
+    width: 50vw;
+    height:100vh;
+}
+.main-bg{
+    position:absolute;
+}
+.bg-img{
+    background-position: center center;
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-size: cover;
+}
+.l-content{
+    background-image: url(../img/lunch.jpg);
+    z-index: 1;
+}
+.r-content{
+    background-image: url(../img/dinner.jpg);
+}
+.filtered{
+    -webkit-filter: contrast(70%) brightness(120%) saturate(0%) hue-rotate(2deg) invert(0%) opacity(100%) blur(2px) grayscale(0%) sepia(0%);
+    -moz-filter: contrast(100%) brightness(100%) saturate(100%) hue-rotate(0deg) invert(0%) opacity(100%) blur(0px) grayscale(0%) sepia(0%);
+    filter: contrast(100%) brightness(100%) saturate(100%) hue-rotate(0deg) invert(0%) opacity(100%) blur(0px) grayscale(0%) sepia(0%);
+}
+.filteroff{
+    -webkit-filter:none;
+    -moz-filter:none;
+    filter:none;
+}
+/*icons*/
+.l-icon{
+    position:absolute;
+}
+.icon{
+    width:300px;
+    height: 300px;
+    margin-top: 25%;
+}
+.border{
+    border:20px;
+    border-style: solid;
+    border-color: white;
+}
+.circle{
+    border-radius: 50%;
+}
+/*buttons*/
+.btn-wrap{
+    text-align: center;
+    margin-top:5%;
+    border:5px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+    height:100px;
+    width:300px;
+}.btn-wrap:hover{
+    background-color: rgba(255,255,255,0.3);
+}
+.btn-txt{
+    font-size: 1.8em;
+    position: relative;
+    top: 28%;
+}
+/*footer*/
+footer{
+    height: 50px;
+    width: 100vw;
+    position: absolute;
+    bottom:0px;
+    text-align: center;
+}
