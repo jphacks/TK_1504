@@ -27,6 +27,7 @@ header{
     z-index: 10;
 }
 header strong{
+    text-shadow: -3px 0px 0px rgba(125, 55, 55, 1);
     font-size: 2em;
 }
 
@@ -103,7 +104,12 @@ main{
 }
 
 .txt-start{
+    text-shadow: -5px 0px 0px rgba(125, 55, 55, 1);
     padding-top: 180px;
+}
+.loadimg{
+    width:100%;
+    height: 100%;
 }
 .bgimg1{
     background-image: url(../img/moyai.jpg);
@@ -132,12 +138,13 @@ main{
 /*map*/
 .brdr-rad{
     border-radius: 15px;
+    position:relative;
     overflow: scroll;
 }
 .map{
     margin-top:150px;
-    width:500px;
-    height:500px;
+    width:600px;
+    height:600px;
 }
 .inner-shadow{
     -webkit-box-shadow:0 0 2px 2px rgba(200,200,200,0.5) inset;
@@ -150,6 +157,16 @@ main{
     width: 80%;
     text-align: center;
     font-size: 1.5em;
+}
+th, td{
+    padding:0;
+}
+.scrollable{
+    overflow:scroll;
+}
+.icon{
+    height:40px;
+    width:auto;
 }
 /*footer*/
 footer{
