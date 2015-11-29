@@ -1,5 +1,4 @@
 $(function(){
-    console.log("initialized");
     var s_data = sampledata;
 
     var vueMain = new Vue({
@@ -11,12 +10,19 @@ $(function(){
     var vueResult = new Vue({
         el:'.result-wrapper',
         data:{
-            result:[]
+            result:[],
+            time_sum:[0]
         }
     });
 
     $('.btn-start').click(function(){
         if(!vueMain.started){
+            // 時間データの格納
+            var ts = 0;
+            for(var i = 0; i< s_data.tasks.length;i++){
+                ts += s_data.tasks[i].time;
+                vueResult.time_sum.push(ts);
+            }
             vueResult.result = s_data;
 
             setTimeout(function(){
