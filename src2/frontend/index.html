@@ -23,10 +23,14 @@
     <main role="main" class="">
         <article class="top-wrapper pos-abs-top0 bg-sub2">
             <article class="btn-start centering bg-sub3 circle">
-                <section>
-                    <h1 class="txt-start txt-lg txt-sub2">Start</h1>
+                <section v-if="!started">
+                    <h1 class="txt-start txt-lg txt-sub2 customfont">Trip!</h1>
+                </section>
+                <section v-else>
+                    <img class="loadimg" src="img/puff.svg"/>
                 </section>
             </article>
+
             <aside class="top-cntnt tp-l bgimg bgimg1">
 
             </aside>
@@ -38,33 +42,16 @@
         <article class="result-wrapper pos-abs-top0">
             <aside class="result l-float bg-base">
                 <div class="map brdr-rad centering">
-                    <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7599.607182416919!2d139.6978511472127!3d35.65934449299493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b5832e31057%3A0x8064180af8c9b5df!2z5riL6LC36aeF!5e0!3m2!1sja!2sjp!4v1448723615859" width="500" height="500" frameborder="0" style="" allowfullscreen></iframe>
+                    <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7599.607182416919!2d139.6978511472127!3d35.65934449299493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b5832e31057%3A0x8064180af8c9b5df!2z5riL6LC36aeF!5e0!3m2!1sja!2sjp!4v1448723615859" width="600" height="600" frameborder="0" style="" allowfullscreen></iframe>
                 </div>
             </aside>
-            <aside class="result r-float bg-back">
-                <table class="root-table centering">
-                        <!--
-                        <caption>
-                            <h1>六本木：美術館ツアー</h1>
-                            <details>
-                                <summary>説明</summary>
-                                <p>六本木を10:00~19:00まで遊べるコースです。</p>
-                            </details>
-                        </caption>
-                         -->
+            <aside class="result r-float bg-back scrollable">
+                <table class="root-table centering txt-sub3 customfont">
                         <thead>
                             <tr><th>タイプ</th><th>時間</th><th>場所</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>●</td><th>10:00~11:00</th><td>六本木駅</td></tr>
-                            <tr><td>|</td><th>11:00~11:10</th><td>移動</td></tr>
-                            <tr><td>●</td><th>11:10~13:00</th><td>ミッドタウン</td></tr>
-                            <tr><td>|</td><th>13:00~13:15</th><td>移動</td></tr>
-                            <tr><td>●</td><th>13:15~15:00</th><td>美術館</td></tr>
-                            <tr><td>|</td><th>15:00~15:20</th><td>移動</td></tr>
-                            <tr><td>●</td><th>15:20~17:00</th><td>森タワー</td></tr>
-                            <tr><td>|</td><th>17:00~17:20</th><td>移動</td></tr>
-                            <tr><td>★</td><th>17:20~19:00</th><td>焼肉　Ryo</td></tr>
+                            <tr v-for="res in result.tasks" class="t-row"><td><img src="img/{{(res.type == 'place') ? 'location' : (res.type == 'move' ? 'road' : 'lunch')}}.svg" alt="icon{{res.task_id}}" class="icon"/></td><th>{{res.time}}</th><td>{{res.name}}</td></tr>
                         </tbody>
                 </table>
             </aside>

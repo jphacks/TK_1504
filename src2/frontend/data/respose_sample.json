@@ -1,40 +1,4 @@
-$(function(){
-    console.log("initialized");
-    var s_data = sampledata;
-
-    var vueMain = new Vue({
-        el:'.top-wrapper',
-        data:{
-            started:false
-        }
-    });
-    var vueResult = new Vue({
-        el:'.result-wrapper',
-        data:{
-            result:[]
-        }
-    });
-
-    $('.btn-start').click(function(){
-        if(!vueMain.started){
-            vueResult.result = s_data;
-
-            setTimeout(function(){
-        	    $(".top-wrapper").toggleClass('anime-active');
-
-                $('tbody .t-row')
-                    .css({opacity: 0})
-                    .each(function(i){
-                        $(this).delay(250 * i)
-                            .animate({opacity: 1}, 700);
-                    });
-            },600);
-        }
-        vueMain.started = true;
-    });
-});
-
-var sampledata = {
+{
     "tasks":[
         {
             "task_id":0,
@@ -100,4 +64,4 @@ var sampledata = {
             "type":"place"
         }
     ]
-};
+}
