@@ -8,9 +8,126 @@
 
     <link rel="stylesheet" type="text/css" href="css/colors.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/vue.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+        var mapObj = null; 
+        var lng = 139.81925904750824; 
+        var lat = 35.6832894073129; 
+        var dest_id = null;
+        var sjson = sampledata;
+            /*"tasks":[
+                {
+                    "task_id":0,
+                    "name":"蒙古タンメン中本 渋谷店",
+                    "time":60,
+                    "place_id":"ChIJxT2CKqiMGGARWqOQf5dVQ14",
+                    "type":"place"
+                },
+                {
+                    "task_id":1,
+                    "name":"駒形どぜう 渋谷店",
+                    "time":70,
+                    "place_id":"ChIJRUBoyFeLGGARyIyrBLdP2RI",
+                    "type":"place"
+                },
+                {
+                    "task_id":2,
+                    "name":"天下一品 渋谷店",
+                    "time":40,
+                    "place_id":"ChIJO1kJpqmMGGARue-xGYR8Oh0",
+                    "type":"restaurant"
+                },
+                {
+                    "task_id":3,
+                    "name":"ラーメン凪 豚王 渋谷店",
+                    "time":80,
+                    "place_id":"ChIJPxXKJFyLGGARzeKOI4NWutw",
+                          "type":"place"
+               },
+                {
+                    "task_id":4,
+                    "name":"食幹 渋谷店 (Shokkan shibuya)",
+                    "time":60,
+                    "place_id":"ChIJwX8rr16LGGARKmcPdU_bTwA",
+                    "type":"place"
+                }
+            ]
+        };*/
+
+        var json_length = Object.keys(sjson.tasks).length;
+        json_length = json_length - 1;
+        console.log(json_length);
+
+        var nodes = 0;
+        for (var i = 0; i < json_length; i++){
+            if(sjson.tasks[i].type != "move"){
+                nodes++;
+            }
+        }
+        console.log("nodes:"+nodes);
+        var wayPoints = new Array(nodes);
+
+
+        var c = 0;
+        for (var i = 0; i < json_length; i++){
+            if(sjson.tasks[i].type != "move"){
+                wayPoints[c] =  {"location": {"placeId" : null}};
+                console.log(wayPoints[c].location);
+                c++;
+            }
+        }
+
+        google.maps.event.addDomListener(window, 'load', function() 
+        { 
+            var mapOptions = { 
+                zoom: 11, 
+                center: new google.maps.LatLng(lat, lng), 
+                mapTypeId: google.maps.MapTypeId.ROADMAP, 
+                scaleControl: true 
+            }; 
+            mapObj = new google.maps.Map(document.getElementById('gmap'), mapOptions); 
+
+            var c = 0;
+            for (var i=0; i <= json_length; i++){
+                if(sjson.tasks[i].type != "move"){
+                    if(c == nodes){
+                        dest_id = sjson.tasks[c].place_id;
+                        console.log("dest_id"+dest_id)
+                    }else{
+                        wayPoints[c].location.placeId = sjson.tasks[i].place_id;
+                        console.log(wayPoints[c].location.placeId);
+                    }
+                    c++;
+                }
+                
+            }
+
+            var directionsRenderer = new google.maps.DirectionsRenderer(); 
+            directionsRenderer.setMap(mapObj); 
+  
+            var request = { 
+                origin: {lat, lng},
+                destination: {'placeId': dest_id}, 
+                travelMode: google.maps.DirectionsTravelMode.WALKING, 
+                waypoints: wayPoints 
+            }; 
+
+            var directionsService = new google.maps.DirectionsService(); 
+            directionsService.route(request, function(result, status) 
+            { 
+                if (status == google.maps.DirectionsStatus.OK) { 
+                    directionsRenderer.setDirections(result); 
+                } 
+            });
+
+        }); 
+    </script>
+
+
 </head>
 <body class="bg-back">
     <header role="banner" class="bg-sub3">
@@ -41,10 +158,11 @@
         </article>
         <article class="result-wrapper pos-abs-top0">
             <aside class="result l-float bg-base">
-                <div class="map brdr-rad centering">
+                <div class="map brdr-rad centering" id="gmap" style="width: 600px; height: 600px"> </div>
+                <!--div class="map brdr-rad centering">
                     <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7599.607182416919!2d139.6978511472127!3d35.65934449299493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b5832e31057%3A0x8064180af8c9b5df!2z5riL6LC36aeF!5e0!3m2!1sja!2sjp!4v1448723615859" width="600" height="600" frameborder="0" style="" allowfullscreen></iframe>
-                </div>
-            </aside>
+                </div-->
+            </aside>class="map brdr-rad centering" 
             <aside class="result r-float bg-back scrollable">
                 <table class="root-table centering txt-sub3 customfont">
                         <thead>
