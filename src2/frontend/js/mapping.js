@@ -41,7 +41,7 @@ google.maps.event.addDomListener(window, 'load', function()
     for (var i=0; i <= json_length; i++){
         if(sjson.tasks[i].type != "move"){
             if(c == nodes){
-                dest_id = sjson.tasks[c].place_id;
+                dest_id = sjson.tasks[i].place_id;
                 console.log("dest_id"+dest_id)
             }else{
                 wayPoints[c].location.placeId = sjson.tasks[i].place_id;
