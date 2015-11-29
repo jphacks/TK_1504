@@ -1,90 +1,101 @@
-/*initialize setting*/
-.padclr{padding:0;}
-.margclr{margin:0;}
-.centering{margin: 0 auto;}
-/*foater*/
-.f-left{float:left;}
-.f-right{float: right;}
-
-/*content*/
-/*header*/
-.header{
-    z-index: 10;
-    height:50px;
-    width:100vw;
-    position: absolute;
-    top:0px;
+/*initialize*/
+body{
+    margin:0;
 }
-.header > div{
-    width: 100px;
+a{ text-decoration:none;}
+.centering{
+    margin:0 auto;
+}
+.align-cent{
     text-align: center;
 }
-/*main*/
-.main-cont{
-    width: 50vw;
-    height:100vh;
-}
-.main-bg{
-    position:absolute;
-}
-.bg-img{
+.bgimg{
     background-position: center center;
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
     background-size: cover;
 }
-.l-content{
-    background-image: url(../img/lunch.jpg);
-    z-index: 1;
-}
-.r-content{
-    background-image: url(../img/dinner.jpg);
-}
-.filtered{
-    -webkit-filter: contrast(70%) brightness(120%) saturate(0%) hue-rotate(2deg) invert(0%) opacity(100%) blur(2px) grayscale(0%) sepia(0%);
-    -moz-filter: contrast(100%) brightness(100%) saturate(100%) hue-rotate(0deg) invert(0%) opacity(100%) blur(0px) grayscale(0%) sepia(0%);
-    filter: contrast(100%) brightness(100%) saturate(100%) hue-rotate(0deg) invert(0%) opacity(100%) blur(0px) grayscale(0%) sepia(0%);
-}
-.filteroff{
-    -webkit-filter:none;
-    -moz-filter:none;
-    filter:none;
-}
-/*icons*/
-.l-icon{
-    position:absolute;
-}
-.icon{
-    width:300px;
-    height: 300px;
-    margin-top: 25%;
-}
-.border{
-    border:20px;
-    border-style: solid;
-    border-color: white;
-}
 .circle{
     border-radius: 50%;
 }
-/*buttons*/
-.btn-wrap{
-    text-align: center;
-    margin-top:5%;
-    border:5px;
-    border-style: solid;
-    border-color: white;
-    border-radius: 30px;
-    height:100px;
-    width:300px;
+.customfont{
+    font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
 }
-.btn-wrap:hover{
+/*header*/
+header{
+    height:50px;
+    width:100vw;
+    position: absolute;
+    top:0px;
+    z-index: 10;
+}
+header strong{
+    text-shadow: -3px 0px 0px rgba(125, 55, 55, 1);
+    font-size: 2em;
+}
+
+/*main*/
+main{
+    height: 100vh;
+    width: 100vw;
+    position:relative;
+    overflow: hidden;
+}
+.pos-abs-top0{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height:100vh;
+}
+/*top*/
+.top-wrapper{
+    /*Debug setting*/
+    /*display: none; */
+    /*opacity: 0.7;*/
+
+
+    z-index: 5;
+}
+.top-cntnt{
+    position: absolute;
+    top:0;
+    width:50vw;
+    height:100vh;
+    z-index: -5;
+}
+.tp-l{left:0;}.tp-r{right:0;}
+.txt-lg{
+    font-size: 5em;
+}
+.btn-start{
+    animation: wave-anime 1.0s ease 0s infinite normal;
+    margin-top: 200px;
+    height:500px;
+    width:500px;
+    text-align: center;
+    z-index: 20;
+}
+@keyframes wave-anime{
+    0% {
+        box-shadow: 0 0 0px 0px rgba(199,36,58,0.8);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+    }
+    50%{
+        -webkit-transform: scale(1.01);
+        -moz-transform: scale(1.01);
+    }
+    100% {
+        box-shadow: 0 0 0px 70px rgba(199,36,58,0);
+    }
+}
+.btn-start:hover{
     /*background-color: rgba(255,255,255,0.3);*/
-    animation: btn-expand-anime 0.1s ease 0s 1 alternate;
+    animation: anime-expand 0.1s ease 0s 1 alternate;
     -webkit-transform: scale(1.15);
     -moz-transform: scale(1.15);
 }
-@keyframes btn-expand-anime {
+@keyframes anime-expand{
     0% {
         -webkit-transform: scale(1);
         -moz-transform: scale(1);
@@ -94,17 +105,96 @@
         -moz-transform: scale(1.15);
     }
 }
+.anime-active{
+    animation: frameout 0.5s ease 0s 1 alternate;
+    -webkit-transform: translate(0px,1000px);
+    -moz-transform: translate(0px,1000px);
+}
+@keyframes frameout{
+    0% {
+        -webkit-transform: translate(0px,0px);
+        -moz-transform: translate(0px,0px);
+    }
+    100% {
+        -webkit-transform: translate(0px,1000px);
+        -moz-transform: translate(0px,1000px);
+    }
+}
 
-.btn-txt{
-    font-size: 1.8em;
+.txt-start{
+    text-shadow: -5px 0px 0px rgba(125, 55, 55, 1);
+    padding-top: 180px;
+}
+.loadimg{
+    width:100%;
+    height: 100%;
+}
+.bgimg1{
+    background-image: url(../img/moyai.jpg);
+}
+.bgimg2{
+    background-image: url(../img/hachiko.jpg);
+}
+
+/*result*/
+.result-wrapper{
+
+}
+.result{
     position: relative;
-    top: 28%;
+    top:0;
+    height:100%;
+    width:50vw;
+}
+.l-float{
+    float: left;
+}
+.r-float{
+    float:right;
+}
+
+/*map*/
+.brdr-rad{
+    border-radius: 15px;
+    position:relative;
+    overflow: scroll;
+}
+.map{
+    margin-top:150px;
+    width:600px;
+    height:600px;
+}
+.inner-shadow{
+    -webkit-box-shadow:0 0 2px 2px rgba(200,200,200,0.5) inset;
+    -moz-box-shadow:0 0 2px 2px rgba(200,200,200,0.5) inset;
+    box-shadow:0 0 2px 2px rgba(200,200,200,0.5) inset;
+}
+/*root table*/
+.root-table{
+    margin-top: 100px;
+    width: 80%;
+    text-align: center;
+    font-size: 1.5em;
+}
+tr{
+    position: relative;
+}
+th, td{
+    padding:0;
+    min-width: 80px;
+}
+.scrollable{
+    overflow:scroll;
+}
+.icon{
+    height:40px;
+    width:auto;
+    fill: pink;
 }
 /*footer*/
 footer{
-    height: 50px;
     width: 100vw;
     position: absolute;
-    bottom:0px;
+    bottom:5px;
     text-align: center;
 }

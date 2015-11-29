@@ -1,38 +1,33 @@
-/*bg-color setting*/
-.bg-backColor{
+/*background color set*/
+.bg-back{
+    background-color: #C8EFEA;
+}
+.bg-base{
+    background-color: #009F8C;
+}
+.bg-sub1{
+    background-color: #40BFB0;
+}
+.bg-sub2{
     background-color: #FFFFFF;
 }
-.bg-baseColor{
-    background-color: #41466F;
-}
-.bg-subColor1{
-    background-color: #546383;
-}
-.bg-subColor2{
-    background-color: #AAAAAA;
-}
-.bg-subColor3{
+.bg-sub3{
     background-color: #C7243A;
 }
-.bg-subColor4{
-    background-color: #FFEE55;
+
+/*text color set*/
+.txt-back{
+    color: #C8EFEA;
 }
-/*font color setting*/
-.txt-backColor{
+.txt-base{
+    color: #009F8C;
+}
+.txt-sub1{
+    color: #40BFB0;
+}
+.txt-sub2{
     color: #FFFFFF;
 }
-.txt-baseColor{
-    color: #41466F;
-}
-.txt-subColor1{
-    color: #546383;
-}
-.txt-subColor2{
-    color: #AAAAAA;
-}
-.txt-subColor3{
+.txt-sub3{
     color: #C7243A;
-}
-.txt-subColor4{
-    color: #FFEE55;
 }
