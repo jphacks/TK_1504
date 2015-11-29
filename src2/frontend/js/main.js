@@ -1,5 +1,5 @@
 $(function(){
-    var s_data = sampledata;
+    var s_data = sampledata2;
 
     var vueMain = new Vue({
         el:'.top-wrapper',
@@ -24,23 +24,21 @@ $(function(){
                 vueResult.time_sum.push(ts);
             }
             vueResult.result = s_data;
+            $('tbody tr')
+                .css({opacity: 0})
+                .each(function(i){
+                    $(this).delay(300 * i)
+                        .animate({opacity: 1}, 800);
+                });
 
             setTimeout(function(){
         	    $(".top-wrapper").toggleClass('anime-active');
-
-                $('tbody .t-row')
-                    .css({opacity: 0})
-                    .each(function(i){
-                        $(this).delay(250 * i)
-                            .animate({opacity: 1}, 700);
-                    });
-            },600);
+            },500);
         }
         vueMain.started = true;
     });
 });
-
-var sampledata = {
+var sampledata2 = {
     "tasks":[
         {
             "task_id":0,
