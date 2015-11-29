@@ -1,72 +1,46 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 50.233 50.233" style="enable-background:new 0 0 50.233 50.233;" xml:space="preserve">
-<g>
-	<g>
-		<path d="M32.096,0H18.138l-2.586,50.233h19.129L32.096,0z M26.747,49.604h-3.261v-5.375h3.261V49.604z M26.747,38.856h-3.261
-			v-5.374h3.261V38.856z M26.747,28.108h-3.261v-5.372h3.261V28.108z M26.747,17.362h-3.261v-5.374h3.261V17.362z M26.747,6.612
-			h-3.261V1.24h3.261V6.612z"/>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-	<g>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<?xml version="1.0"?>
+<svg width="50.233" height="50.233" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1">
+   <g id="svg_2">
+    <path fill="#009f8e" id="svg_3" d="m32.096001,0l-13.958,0l-2.585999,50.233002l19.128999,0l-2.584999,-50.233002zm-5.349001,49.604l-3.261,0l0,-5.375l3.261,0l0,5.375zm0,-10.748001l-3.261,0l0,-5.374001l3.261,0l0,5.374001zm0,-10.747999l-3.261,0l0,-5.372l3.261,0l0,5.372zm0,-10.746l-3.261,0l0,-5.374001l3.261,0l0,5.374001zm0,-10.75l-3.261,0l0,-5.372l3.261,0l0,5.372z"/>
+   </g>
+   <g id="svg_4"/>
+   <g id="svg_5"/>
+   <g id="svg_6"/>
+   <g id="svg_7"/>
+   <g id="svg_8"/>
+   <g id="svg_9"/>
+   <g id="svg_10"/>
+   <g id="svg_11"/>
+   <g id="svg_12"/>
+   <g id="svg_13"/>
+   <g id="svg_14"/>
+   <g id="svg_15"/>
+   <g id="svg_16"/>
+   <g id="svg_17"/>
+   <g id="svg_18"/>
+  </g>
+  <g id="svg_19"/>
+  <g id="svg_20"/>
+  <g id="svg_21"/>
+  <g id="svg_22"/>
+  <g id="svg_23"/>
+  <g id="svg_24"/>
+  <g id="svg_25"/>
+  <g id="svg_26"/>
+  <g id="svg_27"/>
+  <g id="svg_28"/>
+  <g id="svg_29"/>
+  <g id="svg_30"/>
+  <g id="svg_31"/>
+  <g id="svg_32"/>
+  <g id="svg_33"/>
+ </g>
 </svg>

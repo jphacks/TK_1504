@@ -18,6 +18,9 @@ a{ text-decoration:none;}
 .circle{
     border-radius: 50%;
 }
+.customfont{
+    font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+}
 /*header*/
 header{
     height:50px;
@@ -65,11 +68,26 @@ main{
     font-size: 5em;
 }
 .btn-start{
+    animation: wave-anime 1.0s ease 0s infinite normal;
     margin-top: 200px;
     height:500px;
     width:500px;
     text-align: center;
     z-index: 20;
+}
+@keyframes wave-anime{
+    0% {
+        box-shadow: 0 0 0px 0px rgba(199,36,58,0.8);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+    }
+    50%{
+        -webkit-transform: scale(1.01);
+        -moz-transform: scale(1.01);
+    }
+    100% {
+        box-shadow: 0 0 0px 70px rgba(199,36,58,0);
+    }
 }
 .btn-start:hover{
     /*background-color: rgba(255,255,255,0.3);*/
@@ -158,8 +176,12 @@ main{
     text-align: center;
     font-size: 1.5em;
 }
+tr{
+    position: relative;
+}
 th, td{
     padding:0;
+    min-width: 80px;
 }
 .scrollable{
     overflow:scroll;
@@ -167,6 +189,7 @@ th, td{
 .icon{
     height:40px;
     width:auto;
+    fill: pink;
 }
 /*footer*/
 footer{

@@ -24,7 +24,7 @@
         <article class="top-wrapper pos-abs-top0 bg-sub2">
             <article class="btn-start centering bg-sub3 circle">
                 <section v-if="!started">
-                    <h1 class="txt-start txt-lg txt-sub2">Start</h1>
+                    <h1 class="txt-start txt-lg txt-sub2 customfont">Trip!</h1>
                 </section>
                 <section v-else>
                     <img class="loadimg" src="img/puff.svg"/>
@@ -46,37 +46,12 @@
                 </div>
             </aside>
             <aside class="result r-float bg-back scrollable">
-                <table class="root-table centering txt-sub3 ">
-                        <!--
-                        <caption>
-                            <h1>六本木：美術館ツアー</h1>
-                            <details>
-                                <summary>説明</summary>
-                                <p>六本木を10:00~19:00まで遊べるコースです。</p>
-                            </details>
-                        </caption>
-                         -->
+                <table class="root-table centering txt-sub3 customfont">
                         <thead>
                             <tr><th>タイプ</th><th>時間</th><th>場所</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td><img src="img/location.svg" alt="locicon" class="icon"/></td><th>10:00~11:00</th><td>六本木駅</td></tr>
-                            <tr><td><img src="img/road.svg" alt="locicon" class="icon"/></td><th>11:00~11:10</th><td></td></tr>
-                            <tr><td><img src="img/location.svg" alt="locicon" class="icon"/></td><th>11:10~13:00</th><td>ミッドタウン</td></tr>
-                            <tr><td><img src="img/road.svg" alt="locicon" class="icon"/></td><th>13:00~13:15</th><td></td></tr>
-                            <tr><td><img src="img/location.svg" alt="locicon" class="icon"/></td><th>13:15~15:00</th><td>美術館</td></tr>
-                            <tr><td><img src="img/road.svg" alt="locicon" class="icon"/></td><th>15:00~15:20</th><td></td></tr>
-                            <tr><td><img src="img/location.svg" alt="locicon" class="icon"/></td><th>15:20~17:00</th><td>森タワー</td></tr>
-                            <tr><td><img src="img/road.svg" alt="locicon" class="icon"/></td><th>17:00~17:20</th><td></td></tr>
-                            <tr><td><img src="img/lunch.svg" alt="locicon" class="icon"/></td><th>17:20~19:00</th><td>焼肉　Ryo</td></tr>
-                            <tr><td><img src="img/road.svg" alt="locicon" class="icon"/></td><th>11:00~11:10</th><td></td></tr>
-                            <tr><td><img src="img/location.svg" alt="locicon" class="icon"/></td><th>11:10~13:00</th><td>ミッドタウン</td></tr>
-                            <tr><td><img src="img/road.svg" alt="locicon" class="icon"/></td><th>13:00~13:15</th><td></td></tr>
-                            <tr><td><img src="img/location.svg" alt="locicon" class="icon"/></td><th>13:15~15:00</th><td>美術館</td></tr>
-                            <tr><td><img src="img/road.svg" alt="locicon" class="icon"/></td><th>15:00~15:20</th><td></td></tr>
-                            <tr><td><img src="img/location.svg" alt="locicon" class="icon"/></td><th>15:20~17:00</th><td>森タワー</td></tr>
-                            <tr><td><img src="img/road.svg" alt="locicon" class="icon"/></td><th>17:00~17:20</th><td></td></tr>
-                            <tr><td><img src="img/lunch.svg" alt="locicon" class="icon"/></td><th>17:20~19:00</th><td>焼肉　Ryo</td></tr>
+                            <tr v-for="res in result.tasks" class="t-row"><td><img src="img/{{(res.type == 'place') ? 'location' : (res.type == 'move' ? 'road' : 'lunch')}}.svg" alt="icon{{res.task_id}}" class="icon"/></td><th>{{res.time}}</th><td>{{res.name}}</td></tr>
                         </tbody>
                 </table>
             </aside>
