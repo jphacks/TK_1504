@@ -51,7 +51,15 @@
                             <tr><th>タイプ</th><th>時間</th><th>場所</th></tr>
                         </thead>
                         <tbody>
-                            <tr v-for="res in result.tasks" class="t-row"><td><img src="img/{{(res.type == 'place') ? 'location' : (res.type == 'move' ? 'road' : 'lunch')}}.svg" alt="icon{{res.task_id}}" class="icon"/></td><th>{{res.time}}</th><td>{{res.name}}</td></tr>
+                            <tr v-for="res in result.tasks" class="t-row">
+                                <td>
+                                    <img src="img/{{(res.type == 'place') ? 'location' : (res.type == 'move' ? 'road' : 'lunch')}}.svg" alt="icon{{res.task_id}}" class="icon"/>
+                                </td>
+                                <td>
+                                    {{parseInt( ((10*60)+time_sum[$index]) / 60 )}}:{{(((10*60)+time_sum[$index]) % 60) != 0 ? (((10*60)+time_sum[$index]) % 60) : "00"}}~{{parseInt( ((10*60)+time_sum[$index+1]) / 60 )}}:{{(((10*60)+time_sum[$index+1]) % 60) != 0 ? (((10*60)+time_sum[$index+1]) % 60) : "00"}}
+                                </td>
+                                <td>{{res.name}}</td>
+                            </tr>
                         </tbody>
                 </table>
             </aside>
