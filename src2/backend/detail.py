@@ -1,19 +1,19 @@
+import json
+
 def json_make(json):
     result = {}
-    result["shop_id"] = json.id
-    result["location"] = json.geometry.location
-    result["shop_name"] = json.name
-    result["address"] = json.formatted_address
-    result["phone_number"] = json.formatted_phone_number
-    result["review_ave"] = json.user_ratings_total
-    result["opentime"] = json.opening_hours
-    result["reviews"] = json.reviews
-
-    return json.dumps(result)
-
-p = json.loads(str)
-p = json.loads(str)
-if p["status"]!="OK":
-    return undefined
-
-return json_make(p.result)
+    list=["id","name","formatted_address",\
+    "formatted_phone_number",\
+    "user_ratings_total","reviews","place_id"]
+    #result["opentime"] = json["opening_hours"]
+    for i in range(len(list)):
+        if list[i] in json:
+            result[list[i]]=json[list[i]]
+    result["location"]=json["geometry"]["location"]
+    return result
+    
+def main(str):
+    p=(json.loads(str.encode("utf-8")))
+    if p["status"]!="OK":
+        return None
+    return json_make(p["result"])
